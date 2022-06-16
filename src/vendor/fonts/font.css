@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Exo2.0-Thin";
+    src: url(../fonts/Exo2.0-Thin.woff) format("woff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Exo2.0-Thin";
+    src: url(../fonts/Exo2.0-Thin.woff) format("woff");
+    font-weight: 500;
+}
+
+
+@font-face {
+  font-family: "Trebuchet MS";
+  src: url(../fonts/TrebuchetMS-Bold.woff) format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Trebuchet MS";
+  src: url(../fonts/TrebuchetMS.woff) format("woff");
+  font-weight: 400;
+}
