@@ -29,22 +29,31 @@
 
 .card__container {
   height: 472px;
-  background-color: #fff;
   box-sizing: border-box;
   width: 312px;
-  background: linear-gradient(135deg, transparent 30px, #fff 0);
+  background: linear-gradient(135deg, transparent 30px, #f2f2f2 0);
   border-radius: 7px;
   overflow: hidden;
   position: relative;
-
 }
 
-.card__container_disabled {
-  z-index: 10;
+.card_disaibled {
   position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #b3b3b3;
+  background: linear-gradient(135deg, transparent 30px, #f2f2f2 0);
+  z-index: 8;
+  opacity: 0.5;
+}
+
+/*.card__container_disabled {
   background-color: #f2f2f2;
   background: linear-gradient(135deg, transparent 30px, #f2f2f2 0);
-}
+
+}*/
 
 .card__border_style_pink {
   background-color: #d91667;
@@ -63,9 +72,12 @@
 
 .card__box-info {
   padding: 18px 20px 0 43px;
-  position: relative;
-  z-index: 1;
+
 }
+
+/*.card__box-info_disabled {
+  opacity: 0.5;
+}*/
 
 .card__subtitle {
   margin: 0;
@@ -75,10 +87,14 @@
 .card__title {
   color: #000;
   margin: 16px 0 0;
-
   font-weight: 700;
   font-size: 48px;
-line-height: 0.7;
+  line-height: 0.7;
+
+}
+
+.card__title_disabled {
+  color: #b3b3b3;
 }
 
 .card__data {
@@ -94,13 +110,21 @@ line-height: 0.7;
   font-size: 14px;
 }
 
+.card__info_type_weight {
+  font-weight: 700;
+}
+
 .card__img {
   width: 370px;
   height: 361px;
   position: absolute;
-left: -28px;
-top: 203px
+  left: -28px;
+  top: 203px;
 }
+
+/*.card__img_disabled {
+  opacity: 0.5;
+}*/
 
 .card__signature {
   color: #FFF;
@@ -108,6 +132,7 @@ top: 203px
   font-size: 13px;
   font-weight: 500;
 }
+
 .card__box-weight {
   background-color: #1698d9;
   width: 80px;
@@ -119,6 +144,7 @@ top: 203px
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 10;
 }
 
 .card__box-weight_disabled {
@@ -127,14 +153,14 @@ top: 203px
 
 .card__weight {
   margin: 0;
-  color: #fff;
+  color: #f2f2f2;
   font-size: 21px;
 }
 
 .card__weight_type_number {
   font-size: 42px;
-line-height: 0.8;
-padding-top: 17px;
+  line-height: 0.8;
+  padding-top: 17px;
 }
 
 @media screen and (max-width: 970px) {
