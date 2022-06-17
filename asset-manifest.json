@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/test_task_funbox/static/css/main.580d0870.css",
+    "main.js": "/test_task_funbox/static/js/main.fb72a45c.js",
+    "static/js/787.0415bafe.chunk.js": "/test_task_funbox/static/js/787.0415bafe.chunk.js",
+    "static/media/cat.png": "/test_task_funbox/static/media/cat.1eff4c43e1de1151ad0c.png",
+    "static/media/TrebuchetMS.woff": "/test_task_funbox/static/media/TrebuchetMS.af3cbb0e7a5aaa5aad48.woff",
+    "static/media/TrebuchetMS-Bold.woff": "/test_task_funbox/static/media/TrebuchetMS-Bold.ed76e98b5ec0933d740e.woff",
+    "static/media/dg.png": "/test_task_funbox/static/media/dg.b399b098773ef5e556c7.png",
+    "static/media/Exo2.0-Thin.woff": "/test_task_funbox/static/media/Exo2.0-Thin.42a06d409130ba5911bc.woff",
+    "index.html": "/test_task_funbox/index.html",
+    "main.580d0870.css.map": "/test_task_funbox/static/css/main.580d0870.css.map",
+    "main.fb72a45c.js.map": "/test_task_funbox/static/js/main.fb72a45c.js.map",
+    "787.0415bafe.chunk.js.map": "/test_task_funbox/static/js/787.0415bafe.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.580d0870.css",
+    "static/js/main.fb72a45c.js"
+  ]
+}
