@@ -5,6 +5,7 @@ function Card({ card, product, portions, mouse, result, quantity, description, w
 
   const numberOfMice = mouse !== 1 ? mouse : '';
   const quantityProduct = quantity === 0 ? false : true;
+  const availability = quantity === 0;
 
   function getMouse() {
     if (mouse === 1) {
@@ -19,24 +20,17 @@ function Card({ card, product, portions, mouse, result, quantity, description, w
   }
 
   function getStateCard() {
-    if (quantity === 0) {
+    if (availability) {
       return 'card__border card__border_type_disabled'
     }
     return `card__border ${selected ? 'card__border_type_selected' : 'card__border_type_default'}`
   }
 
   function getStateBoxWeight() {
-    if (quantity === 0) {
+    if (availability) {
       return 'card__box-weight card__box-weight_type_disabled'
     }
-    return `card__box-weight ${selected ? 'card__box-weight_type_selected' : 'card__box-weight_type_default'}`
-  }
-
-  function handleClick() {
-    if (quantity === 0) {
-      return;
-    }
-    onSelect(cardId);
+    return `card__box-weight ${selected ? 'card__box-weight_type_selected ' : 'card__box-weight_type_default'}`
   }
 
   function getSignature() {
@@ -50,6 +44,13 @@ function Card({ card, product, portions, mouse, result, quantity, description, w
     } else {
       return (<p className='card__signature'>{description}</p>)
     }
+  }
+
+  function handleClick() {
+    if (availability) {
+      return;
+    }
+    onSelect(cardId);
   }
 
   return (

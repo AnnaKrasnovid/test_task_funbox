@@ -23,7 +23,6 @@ const cardsToRender = isSelectedCard ? availableСards : cards
             onSelect={onSelect}
             isSelectedCard={isSelectedCard}
             selected={card.selected}
-            //availableСards={availableСards}
           />
         )}
       </div>

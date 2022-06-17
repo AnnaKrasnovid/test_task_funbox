@@ -14,7 +14,7 @@ function App() {
     setAvailableСards(filteredCards)
   }
 
-  function handleSelectedCard(cardId) {
+  function handleToggleCardSelected(cardId) {
     const selectedRemove = availableСards.find((card) => card.id === cardId && card.selected === true)
 
     if(availableСards.length === 0) {
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <main className='page'>
-      <Lead cards={cards} availableСards={availableСards} onSelect={handleSelectedCard} isSelectedCard={isSelectedCard} />
+      <Lead cards={cards} availableСards={availableСards} onSelect={handleToggleCardSelected}  isSelectedCard={isSelectedCard} />
     </main>
   );
 }
