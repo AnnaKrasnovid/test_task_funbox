@@ -7,17 +7,19 @@ const dataCards = [
     mouse: 1,
     result: '',
     weight: '0,5',
-    description: 'Печень утки разварная с артишоками'
+    description: 'Печень утки разварная с артишоками',
+    selected: false
   },
   {
     id: 2,
-    quantity: 3,
+    quantity: 5,
     product: 'рыбой',
     portions: '40',
     mouse: 2,
     result: '',
     weight: '2',
-    description: 'Головы щучьи с чесноком да свежайшая сёмгушка.'
+    description: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
+    selected: false
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ const dataCards = [
     mouse: 5,
     result: 'заказчик доволен',
     weight: '5',
-    description: 'Филе из цыплят с трюфелями в бульоне.'
+    description: 'Филе из цыплят с трюфелями в бульоне.',
+    selected: false
   }
 ]
 

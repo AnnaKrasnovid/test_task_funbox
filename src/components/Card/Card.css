@@ -18,14 +18,43 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background-color: #1698d9;
+  cursor: pointer;
+
+}
+.card__border_type_default {
   background: linear-gradient(135deg, transparent 30px, #1698d9 0);
 }
 
-.card__border_disabled {
-  background-color: #b3b3b3;
+
+/*.card__border_state_default {
+  background-color: #1698d9;
+  background: linear-gradient(135deg, transparent 30px, #1698d9 0);
+}*/
+
+.card__border:hover {
+  background: linear-gradient(135deg, transparent 30px, #2ea8e6 0);
+}
+
+.card__border_type_disabled {
   background: linear-gradient(135deg, transparent 30px, #b3b3b3 0);
 }
+
+.card__border_type_disabled:hover {
+  cursor: auto;
+  background: linear-gradient(135deg, transparent 30px, #b3b3b3 0);
+}
+
+.card__border_type_selected {
+  background: linear-gradient(135deg, transparent 30px, #d91667 0);
+}
+
+.card__border_type_selected:hover {
+  background: linear-gradient(135deg, transparent 30px, #e62e7a 0);
+}
+
+
+/*.card__border_hover_selected*/
+
 
 .card__container {
   height: 472px;
@@ -55,20 +84,12 @@
 
 }*/
 
-.card__border_style_pink {
-  background-color: #d91667;
-  background: linear-gradient(135deg, transparent 30px, #d91667 0);
-}
 
 /*.card__border_style_blue {
   background-color: #1698d9;
   background: linear-gradient(135deg, transparent 30px, #1698d9 0);
 }*/
 
-.card__border_hover:hover {
-  background-color: #2ea8e6;
-  background: linear-gradient(135deg, transparent 30px, #2ea8e6 0);
-}
 
 .card__box-info {
   padding: 18px 20px 0 43px;
@@ -133,8 +154,18 @@
   font-weight: 500;
 }
 
+.card__signature_type_sold {
+  color: #ffff66;
+}
+
+.card__signature_type_buy {
+  color: #1698d9;
+  border-bottom: 1px dashed #1698d9;
+  cursor: pointer;
+}
+
+
 .card__box-weight {
-  background-color: #1698d9;
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -147,7 +178,22 @@
   z-index: 10;
 }
 
-.card__box-weight_disabled {
+.card__box-weight_type_default {
+  background-color: #1698d9;
+}
+.card__box-weight_type_default:hover {
+  background-color: #2ea8e6;
+}
+
+.card__box-weight_type_selected {
+  background-color: #d91667;
+}
+
+.card__box-weight_type_selected:hover {
+  background-color: #e62e7a;
+}
+
+.card__box-weight_type_disabled {
   background-color: #b3b3b3;
 }
 

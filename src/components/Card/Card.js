@@ -1,7 +1,7 @@
 import './Card.css';
 import Cat from '../../image/cat.png'
 
-function Card({ card, product, portions, mouse, result, quantity, description, weight }) {
+function Card({ card, product, portions, mouse, result, quantity, description, weight, onSelect, isSelectedCard, cardId, selected }) {
 
   const numberOfMice = mouse !== 1 ? mouse : '';
   const quantityProduct = quantity === 0 ? false : true;
@@ -18,19 +18,43 @@ function Card({ card, product, portions, mouse, result, quantity, description, w
     }
   }
 
-  /*function getDescription() {
-    if(?) {
-      return description;
-    } else if(quantityProduct) {
-      return description;
-    } else {
-      return `Печалька, c ${product} закончился.`
+  function getStateCard() {
+    if (quantity === 0) {
+      return 'card__border card__border_type_disabled'
     }
-  }*/
+    return `card__border ${selected ? 'card__border_type_selected' : 'card__border_type_default'}`
+  }
+
+  function getStateBoxWeight() {
+    if (quantity === 0) {
+      return 'card__box-weight card__box-weight_type_disabled'
+    }
+    return `card__box-weight ${selected ? 'card__box-weight_type_selected' : 'card__box-weight_type_default'}`
+  }
+
+  function handleClick() {
+    if (quantity === 0) {
+      return;
+    }
+    onSelect(cardId);
+  }
+
+  function getSignature() {
+    if (!selected) {
+      return (
+        <p className='card__signature'>
+          Чего сидишь? Порадуй котэ,
+          <span className='card__signature_type_buy' onClick={handleClick}> купи</span>
+        </p>
+      )
+    } else {
+      return (<p className='card__signature'>{description}</p>)
+    }
+  }
 
   return (
-    <div className='card'>
-      <div className={`card__border card__border_hover ${quantityProduct ? '' : 'card__border_disabled'}`}>
+    <div className='card' >
+      <div className={getStateCard()} onClick={handleClick} >
         <div className='card__container'>
           <div className='card__box-info'>
             <p className='card__subtitle'>Сказочное заморское яство</p>
@@ -51,7 +75,7 @@ function Card({ card, product, portions, mouse, result, quantity, description, w
             </div>
           </div>
           <img className='card__img' alt='Голодный кот' src={Cat} />
-          <div className={`card__box-weight ${quantityProduct ? '' : 'card__box-weight_disabled'}`}>
+          <div className={getStateBoxWeight()}>
             <p className='card__weight card__weight_type_number'>{weight}</p>
             <p className='card__weight'>кг</p>
           </div>
@@ -59,7 +83,11 @@ function Card({ card, product, portions, mouse, result, quantity, description, w
         </div>
 
       </div>
-      <p className='card__signature'>{quantityProduct ? description : `Печалька, c ${product} закончился.`}{/*Чего сидишь? Порадуй котэ, купи*/}</p>
+      {
+        quantityProduct ?
+          getSignature() :
+          <p className='card__signature card__signature_type_sold'>{`Печалька, c ${product} закончился.`}</p>
+      }
     </div>
   );
 }
