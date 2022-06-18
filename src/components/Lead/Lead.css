@@ -19,6 +19,8 @@
   max-width: 1120px;
   width: 100%;
   flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (max-width: 970px) {

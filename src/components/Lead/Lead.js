@@ -6,7 +6,7 @@ const cardsToRender = isSelectedCard ? availableСards : cards
   return (
     <section className='lead'>
       <h1 className='lead__title'>Ты&nbsp;сегодня покормил&nbsp;кота?</h1>
-      <div className='lead__cards'>
+      <ul className='lead__cards'>
         {cardsToRender.map((card) =>
           <Card
             key={card.id}
@@ -24,7 +24,7 @@ const cardsToRender = isSelectedCard ? availableСards : cards
             selected={card.selected}
           />
         )}
-      </div>
+      </ul>
     </section>
   );
 }

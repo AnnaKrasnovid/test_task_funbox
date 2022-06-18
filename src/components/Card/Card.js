@@ -86,7 +86,7 @@ function Card({
   }
 
   return (
-    <div className='card' >
+    <li className='card' >
       <div className={getStateCard()} onClick={handleClick} onMouseLeave={handleMouseLeave}>
         <div className='card__container'>
           <div className='card__box-info'>
@@ -120,7 +120,7 @@ function Card({
           getSignature() :
           <p className='card__signature card__signature_type_sold'>{`Печалька, c ${product} закончился.`}</p>
       }
-    </div>
+    </li>
   );
 }
 
