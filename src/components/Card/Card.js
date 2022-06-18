@@ -1,7 +1,21 @@
+import React from 'react';
 import './Card.css';
 import Cat from '../../image/cat.png'
 
-function Card({ card, product, portions, mouse, result, quantity, description, weight, onSelect, isSelectedCard, cardId, selected }) {
+function Card({
+  product,
+  portions,
+  mouse,
+  result,
+  quantity,
+  description,
+  weight,
+  onSelect,
+  cardId,
+  selected
+}) {
+
+  const [isActiveClass, setIsActiveClass] = React.useState(false)
 
   const numberOfMice = mouse !== 1 ? mouse : '';
   const quantityProduct = quantity === 0 ? false : true;
@@ -23,14 +37,26 @@ function Card({ card, product, portions, mouse, result, quantity, description, w
     if (availability) {
       return 'card__border card__border_type_disabled'
     }
-    return `card__border ${selected ? 'card__border_type_selected' : 'card__border_type_default'}`
+    return `card__border ${
+      selected
+      ?
+      (isActiveClass ? 'card__border_type_selected-hover' : 'card__border_type_selected')
+      :
+      (isActiveClass ? 'card__border_type_default-hover' : 'card__border_type_default')
+    }`
   }
 
   function getStateBoxWeight() {
     if (availability) {
       return 'card__box-weight card__box-weight_type_disabled'
     }
-    return `card__box-weight ${selected ? 'card__box-weight_type_selected ' : 'card__box-weight_type_default'}`
+    return `card__box-weight ${
+      selected
+      ?
+      (isActiveClass ? 'card__box-weight_type_selected-hover' : 'card__box-weight_type_selected')
+      :
+      (isActiveClass ? 'card__box-weight_type_default-hover' : 'card__box-weight_type_default')
+    }`
   }
 
   function getSignature() {
@@ -51,11 +77,17 @@ function Card({ card, product, portions, mouse, result, quantity, description, w
       return;
     }
     onSelect(cardId);
+    setIsActiveClass(false)
+  }
+
+  function handleMouseLeave() {
+    setIsActiveClass(true)
+    return
   }
 
   return (
     <div className='card' >
-      <div className={getStateCard()} onClick={handleClick} >
+      <div className={getStateCard()} onClick={handleClick} onMouseLeave={handleMouseLeave}>
         <div className='card__container'>
           <div className='card__box-info'>
             <p className='card__subtitle'>Сказочное заморское яство</p>
@@ -76,13 +108,12 @@ function Card({ card, product, portions, mouse, result, quantity, description, w
             </div>
           </div>
           <img className='card__img' alt='Голодный кот' src={Cat} />
-          <div className={getStateBoxWeight()}>
+          <div className={getStateBoxWeight()} >
             <p className='card__weight card__weight_type_number'>{weight}</p>
             <p className='card__weight'>кг</p>
           </div>
           <div className={quantityProduct ? '' : `card_disaibled`}></div>
         </div>
-
       </div>
       {
         quantityProduct ?

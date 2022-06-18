@@ -7,7 +7,6 @@
   flex-direction: column;
   align-items: center;
   font-weight: 400;
-  font-family: "Trebuchet MS";
 }
 
 .card__border {
@@ -19,19 +18,13 @@
   align-items: center;
   border-radius: 10px;
   cursor: pointer;
-
 }
+
 .card__border_type_default {
   background: linear-gradient(135deg, transparent 30px, #1698d9 0);
 }
 
-
-/*.card__border_state_default {
-  background-color: #1698d9;
-  background: linear-gradient(135deg, transparent 30px, #1698d9 0);
-}*/
-
-.card__border:hover {
+.card__border_type_default-hover {
   background: linear-gradient(135deg, transparent 30px, #2ea8e6 0);
 }
 
@@ -48,13 +41,9 @@
   background: linear-gradient(135deg, transparent 30px, #d91667 0);
 }
 
-.card__border_type_selected:hover {
+.card__border_type_selected-hover {
   background: linear-gradient(135deg, transparent 30px, #e62e7a 0);
 }
-
-
-/*.card__border_hover_selected*/
-
 
 .card__container {
   height: 472px;
@@ -78,27 +67,9 @@
   opacity: 0.5;
 }
 
-/*.card__container_disabled {
-  background-color: #f2f2f2;
-  background: linear-gradient(135deg, transparent 30px, #f2f2f2 0);
-
-}*/
-
-
-/*.card__border_style_blue {
-  background-color: #1698d9;
-  background: linear-gradient(135deg, transparent 30px, #1698d9 0);
-}*/
-
-
 .card__box-info {
   padding: 18px 20px 0 43px;
-
 }
-
-/*.card__box-info_disabled {
-  opacity: 0.5;
-}*/
 
 .card__subtitle {
   margin: 0;
@@ -111,7 +82,6 @@
   font-weight: 700;
   font-size: 48px;
   line-height: 0.7;
-
 }
 
 .card__title_disabled {
@@ -119,7 +89,7 @@
 }
 
 .card__data {
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 .card__title_type_product {
@@ -143,10 +113,6 @@
   top: 203px;
 }
 
-/*.card__img_disabled {
-  opacity: 0.5;
-}*/
-
 .card__signature {
   color: #FFF;
   margin: 15px 0 0;
@@ -164,7 +130,6 @@
   cursor: pointer;
 }
 
-
 .card__box-weight {
   width: 80px;
   height: 80px;
@@ -181,7 +146,8 @@
 .card__box-weight_type_default {
   background-color: #1698d9;
 }
-.card__box-weight_type_default:hover {
+
+.card__box-weight_type_default-hover {
   background-color: #2ea8e6;
 }
 
@@ -189,7 +155,7 @@
   background-color: #d91667;
 }
 
-.card__box-weight_type_selected:hover {
+.card__box-weight_type_selected-hover {
   background-color: #e62e7a;
 }
 

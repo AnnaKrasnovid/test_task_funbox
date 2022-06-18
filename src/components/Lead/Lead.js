@@ -1,7 +1,6 @@
 import './Lead.css';
 import Card from '../Card/Card';
 
-
 function Lead({ cards, onSelect, isSelectedCard, availableСards }) {
 const cardsToRender = isSelectedCard ? availableСards : cards
   return (
