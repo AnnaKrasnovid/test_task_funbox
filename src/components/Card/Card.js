@@ -1,6 +1,6 @@
 import React from 'react';
 import './Card.css';
-import Cat from '../../image/cat.png'
+import Cat from '../../image/cat.png';
 
 function Card({
   product,
@@ -15,7 +15,7 @@ function Card({
   selected
 }) {
 
-  const [isActiveClass, setIsActiveClass] = React.useState(false)
+  const [isActiveClass, setIsActiveClass] = React.useState(false);
 
   const numberOfMice = mouse !== 1 ? mouse : '';
   const quantityProduct = quantity === 0 ? false : true;
@@ -23,19 +23,19 @@ function Card({
 
   function getMouse() {
     if (mouse === 1) {
-      return 'мышь'
+      return 'мышь';
     } else if (mouse > 1 && mouse < 5) {
-      return 'мыши'
+      return 'мыши';
     } else if (mouse >= 5) {
-      return 'мышей'
+      return 'мышей';
     } else {
-      return 'нет мышей'
+      return 'без мышей';
     }
   }
 
   function getStateCard() {
     if (availability) {
-      return 'card__border card__border_type_disabled'
+      return 'card__border card__border_type_disabled';
     }
     return `card__border ${
       selected
@@ -48,7 +48,7 @@ function Card({
 
   function getStateBoxWeight() {
     if (availability) {
-      return 'card__box-weight card__box-weight_type_disabled'
+      return 'card__box-weight card__box-weight_type_disabled';
     }
     return `card__box-weight ${
       selected
@@ -77,12 +77,11 @@ function Card({
       return;
     }
     onSelect(cardId);
-    setIsActiveClass(false)
+    setIsActiveClass(false);
   }
 
   function handleMouseLeave() {
-    setIsActiveClass(true)
-    return
+    setIsActiveClass(true);
   }
 
   return (

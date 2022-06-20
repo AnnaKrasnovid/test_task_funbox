@@ -8,22 +8,21 @@ function App() {
   const [availableСards, setAvailableСards] = React.useState([]);
   const [isSelectedCard, setIsSelectedCard] = React.useState(false);
 
-
-  function getFilteredCards(cardId, cardList) {
-    const filteredCards = cardList.map((card) => (card.id === cardId && card.quantity !== 0) ? { ...card, selected: !card.selected } : { ...card })
-    setAvailableСards(filteredCards)
+  function toggleCardSelected(cardId, cardList) {
+    const filteredCards = cardList.map((card) => (card.id === cardId && card.quantity !== 0) ? { ...card, selected: !card.selected } : { ...card });
+    setAvailableСards(filteredCards);
   }
 
-  function handleToggleCardSelected(cardId) {
-    const selectedRemove = availableСards.find((card) => card.id === cardId && card.selected === true)
+  function handleCardClick(cardId) {
+    const selectedRemove = availableСards.find((card) => card.id === cardId && card.selected === true);
 
     if(availableСards.length === 0) {
-      getFilteredCards(cardId, cards)
-      setIsSelectedCard(true)
+      toggleCardSelected(cardId, cards);
+      setIsSelectedCard(true);
     } else if(availableСards.length !== 0) {
-      getFilteredCards(cardId, availableСards)
+      toggleCardSelected(cardId, availableСards);
     } else if (selectedRemove) {
-      getFilteredCards(cardId, availableСards)
+      toggleCardSelected(cardId, availableСards);
     }
   }
 
@@ -33,7 +32,7 @@ function App() {
 
   return (
     <main className='page'>
-      <Lead cards={cards} availableСards={availableСards} onSelect={handleToggleCardSelected}  isSelectedCard={isSelectedCard} />
+      <Lead cards={cards} availableСards={availableСards} onSelect={handleCardClick}  isSelectedCard={isSelectedCard} />
     </main>
   );
 }

@@ -2,7 +2,9 @@ import './Lead.css';
 import Card from '../Card/Card';
 
 function Lead({ cards, onSelect, isSelectedCard, availableСards }) {
-const cardsToRender = isSelectedCard ? availableСards : cards
+
+const cardsToRender = isSelectedCard ? availableСards : cards;
+
   return (
     <section className='lead'>
       <h1 className='lead__title'>Ты&nbsp;сегодня покормил&nbsp;кота?</h1>
@@ -20,7 +22,6 @@ const cardsToRender = isSelectedCard ? availableСards : cards
             description={card.description}
             weight={card.weight}
             onSelect={onSelect}
-            isSelectedCard={isSelectedCard}
             selected={card.selected}
           />
         )}
