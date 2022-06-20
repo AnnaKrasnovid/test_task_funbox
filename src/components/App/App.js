@@ -5,34 +5,34 @@ import dataCards from '../../utils/dataCards';
 
 function App() {
   const [cards, setCards] = React.useState([]);
-  const [availableСards, setAvailableСards] = React.useState([]);
+  const [filteredСards, setFilteredСards] = React.useState([]);
   const [isSelectedCard, setIsSelectedCard] = React.useState(false);
-
-  function toggleCardSelected(cardId, cardList) {
-    const filteredCards = cardList.map((card) => (card.id === cardId && card.quantity !== 0) ? { ...card, selected: !card.selected } : { ...card });
-    setAvailableСards(filteredCards);
-  }
-
-  function handleCardClick(cardId) {
-    const selectedRemove = availableСards.find((card) => card.id === cardId && card.selected === true);
-
-    if(availableСards.length === 0) {
-      toggleCardSelected(cardId, cards);
-      setIsSelectedCard(true);
-    } else if(availableСards.length !== 0) {
-      toggleCardSelected(cardId, availableСards);
-    } else if (selectedRemove) {
-      toggleCardSelected(cardId, availableСards);
-    }
-  }
 
   React.useEffect(() => {
     setCards(dataCards);
-  }, [cards, availableСards])
+  }, [cards])
+
+  function toggleCardSelected(cardId, cardList) {
+    const cards = cardList.map((card) => (card.id === cardId && card.quantity !== 0) ? { ...card, selected: !card.selected } : { ...card });
+    setFilteredСards(cards);
+  }
+
+  function handleCardClick(cardId) {
+    const selectedRemove = filteredСards.find((card) => card.id === cardId && card.selected === true);
+
+    if(filteredСards.length === 0) {
+      toggleCardSelected(cardId, cards);
+      setIsSelectedCard(true);
+    } else if(filteredСards.length !== 0) {
+      toggleCardSelected(cardId, filteredСards);
+    } else if (selectedRemove) {
+      toggleCardSelected(cardId, filteredСards);
+    }
+  }
 
   return (
     <main className='page'>
-      <Lead cards={cards} availableСards={availableСards} onSelect={handleCardClick}  isSelectedCard={isSelectedCard} />
+      <Lead cards={cards} filteredСards={filteredСards} onSelect={handleCardClick}  isSelectedCard={isSelectedCard} />
     </main>
   );
 }

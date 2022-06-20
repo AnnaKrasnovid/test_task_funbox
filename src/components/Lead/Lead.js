@@ -1,9 +1,9 @@
 import './Lead.css';
 import Card from '../Card/Card';
 
-function Lead({ cards, onSelect, isSelectedCard, availableСards }) {
+function Lead({ cards, onSelect, isSelectedCard, filteredСards }) {
 
-const cardsToRender = isSelectedCard ? availableСards : cards;
+const cardsToRender = isSelectedCard ? filteredСards : cards;
 
   return (
     <section className='lead'>
