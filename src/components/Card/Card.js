@@ -19,7 +19,7 @@ function Card({
 
   const numberOfMice = mouse !== 1 ? mouse : '';
   const quantityProduct = quantity === 0 ? false : true;
-  const availability = quantity === 0;
+  const notAvailabe = quantity === 0;
 
   function getMouse() {
     if (mouse === 1) {
@@ -34,7 +34,7 @@ function Card({
   }
 
   function getStateCard() {
-    if (availability) {
+    if (notAvailabe) {
       return 'card__border card__border_type_disabled';
     }
     return `card__border ${
@@ -47,7 +47,7 @@ function Card({
   }
 
   function getStateBoxWeight() {
-    if (availability) {
+    if (notAvailabe) {
       return 'card__box-weight card__box-weight_type_disabled';
     }
     return `card__box-weight ${
@@ -73,7 +73,7 @@ function Card({
   }
 
   function handleClick() {
-    if (availability) {
+    if (notAvailabe) {
       return;
     }
     onSelect(cardId);
